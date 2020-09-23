@@ -1,0 +1,120 @@
+https://uk.burberry.com
+
+1.checking the name of the selected clothing
+ШАГИ
+Зайти на сайт uk.burberry.com
+Навести на кнопку Bags
+Нажать на кнопку Men's Bags 
+Нажать на изображение-ссылку Logo Detail ECONYL® Sonny Bum Bag
+Нажать на иконку цвета Archive beige. Название изменится на Medium Vintage Check Bonded Cotton Bum Bag
+Нажать на кнопку ADD
+Нажать на кнопку корзины вверху-справа
+ОЖИДАЕМЫЙ РЕЗУЛЬТАТ
+В корзине появится выбранный ранее продукт с названием Medium Vintage Check Bonded Cotton Bum Bag
+
+2.checking the name change of the selected clothing
+ШАГИ
+Зайти на сайт uk.burberry.com
+Нажать на кнопку women
+Нажать на изображение-ссылку tops
+Нажать на изображение-ссылку Logo Applique Silk Satin Oversized Shirt
+Нажать на любой доступный размер в разделе SIZE(UK), например 04
+Нажать на кнопку ADD
+Нажать на кнопку корзины вверху-справа
+ОЖИДАЕМЫЙ РЕЗУЛЬТАТ
+В корзине появится выбранный ранее продукт с соответствующим названием 
+
+3.checking the size of the selected clothing
+ШАГИ
+Зайти на сайт uk.burberry.com
+Нажать на кнопку women
+Нажать на изображение-ссылку tops
+Нажать на изображение-ссылку Logo Applique Silk Satin Oversized Shirt
+Нажать на любой доступный размер в разделе SIZE(UK), например 04
+Нажать на кнопку ADD
+Нажать на кнопку корзины вверху-справа
+ОЖИДАЕМЫЙ РЕЗУЛЬТАТ
+В корзине появится выбранный ранее продукт с выбранным ранее размером
+
+4.checking the selection of clothes without size
+ШАГИ
+Зайти на сайт uk.burberry.com
+Нажать на кнопку women
+Нажать на изображение-ссылку tops
+Нажать на изображение-ссылку Logo Applique Silk Satin Oversized Shirt
+Нажать на кнопку ADD
+ОЖИДАЕМЫЙ РЕЗУЛЬТАТ
+Под кнопкой BOOK IN-STORE APPOINTMENT появится error-label с надписью "Please select a size"
+
+5.checking the choice of clothing color
+ШАГИ
+Зайти на сайт uk.burberry.com
+Навести на кнопку Bags
+Нажать на кнопку Men's Bags 
+Нажать на любое изображение-ссылку, например Logo Detail ECONYL® Sonny Bum Bag
+Нажать на иконку цвета Archive beige
+Нажать на кнопку ADD
+Нажать на кнопку корзины вверху-справа
+ОЖИДАЕМЫЙ РЕЗУЛЬТАТ
+В корзине появится выбранный ранее продукт с цветом Archive beige
+
+6.checking the choice of clothing in a standard color
+ШАГИ
+Зайти на сайт uk.burberry.com
+Навести на кнопку Bags
+Нажать на кнопку Men's Bags 
+Нажать на любое изображение-ссылку, например Logo Detail ECONYL® Sonny Bum Bag
+Продукт должен иметь стандартный цвет, например чёрный
+Нажать на кнопку ADD
+Нажать на кнопку корзины вверху-справа
+ОЖИДАЕМЫЙ РЕЗУЛЬТАТ
+В корзине появится выбранный ранее продукт стандартного цвета
+
+7. checking the price of two identical goods
+ШАГИ
+Зайти на сайт uk.burberry.com
+Навести на кнопку Bags
+Нажать на кнопку Men's Bags 
+Нажать на любое изображение-ссылку, например Logo Detail ECONYL® Sonny Bum Bag
+Нажать на иконку цвета Archive beige
+Нажать на кнопку ADD
+Нажать на кнопку ADD
+Нажать на кнопку корзины вверху-справа
+ОЖИДАЕМЫЙ РЕЗУЛЬТАТ
+В корзине появится выбранный ранее продукт с удвоенной ценой
+
+8. checking the price of two different items
+ШАГИ
+Зайти на сайт uk.burberry.com
+Навести на кнопку Bags
+Нажать на кнопку Men's Bags 
+Нажать на изображение-ссылку Logo Detail ECONYL® Sonny Bum Bag
+Нажать на кнопку ADD
+Нажать на иконку цвета Archive beige
+Нажать на кнопку ADD
+Нажать на кнопку корзины вверху-справа
+ОЖИДАЕМЫЙ РЕЗУЛЬТАТ
+В корзине появятся выбранные ранее продукты, 
+	а Estimated Total будет равна сумме sub-total каждого продукта цен.
+
+9. search string check
+ШАГИ
+Зайти на сайт uk.burberry.com
+Навести на кнопку Search
+Ввести Logo Detail ECONYL Sonny Bum Bag
+Нажать на клавишу Enter
+ОЖИДАЕМЫЙ РЕЗУЛЬТАТ
+откроется страница с товаром Logo Detail ECONYL® Sonny Bum Bag
+
+10. check adding to favorites
+ШАГИ
+Зайти на сайт uk.burberry.com
+Навести на кнопку Search
+Ввести The Long Waterloo Heritage Trench Coat
+Нажать на клавишу Enter
+Нажать на изображение-ссылку The Long Waterloo Heritage Trench Coat
+Нажать на иконку Add to favorites справа от цены
+Навести на иконку Аккаунта вверху-справа
+ОЖИДАЕМЫЙ РЕЗУЛЬТАТ
+В выпадающем меню отобразится товар The Long Waterloo Heritage Trench Coat
+
