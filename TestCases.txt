@@ -1,6 +1,6 @@
 https://uk.burberry.com
 
-1.checking the name of the selected clothing
+1.checking the name change of the selected clothing
 ШАГИ
 Зайти на сайт uk.burberry.com
 Навести на кнопку Bags
@@ -12,7 +12,7 @@ https://uk.burberry.com
 ОЖИДАЕМЫЙ РЕЗУЛЬТАТ
 В корзине появится выбранный ранее продукт с названием Medium Vintage Check Bonded Cotton Bum Bag
 
-2.checking the name change of the selected clothing
+2.checking the name of the selected clothing
 ШАГИ
 Зайти на сайт uk.burberry.com
 Нажать на кнопку women
