@@ -1,6 +1,7 @@
 ﻿namespace Aircompany.Planes
 {
     using Aircompany.Models;
+
     public class PassengerPlane : Plane
     {
 

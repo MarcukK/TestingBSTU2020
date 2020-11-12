@@ -1,4 +1,4 @@
-﻿namespace Aircompany
+﻿namespace Aircompany.Main
 {
     using System;
     using System.Collections.Generic;
