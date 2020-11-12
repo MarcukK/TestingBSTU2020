@@ -4,7 +4,6 @@
 
     public class PassengerPlane : Plane
     {
-
         private const int HashCodeBasePart = 751774561;
         private const int HashCodeAdditionalPart = -1521134295;
 

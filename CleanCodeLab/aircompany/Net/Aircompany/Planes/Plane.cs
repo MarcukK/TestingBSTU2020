@@ -68,6 +68,5 @@
             hashCode = (hashCode * HashCodeAdditionalPart) + maxLoadCapacity.GetHashCode();
             return hashCode;
         }
-
     }
 }

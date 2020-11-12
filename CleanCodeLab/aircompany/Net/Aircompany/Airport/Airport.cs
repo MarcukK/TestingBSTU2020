@@ -74,6 +74,7 @@
                     equality &= planes[i].GetHashCode() == airport[i].GetHashCode();
                 }
             }
+
             return equality;
         }
 
