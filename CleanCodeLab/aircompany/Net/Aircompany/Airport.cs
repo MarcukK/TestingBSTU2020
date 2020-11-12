@@ -17,22 +17,14 @@
         public List<PassengerPlane> GetPassengersPlanes()
         {
             List<PassengerPlane> passengerPlanes = new List<PassengerPlane>();
-            foreach (Plane p in planes.Where(p => p.GetType() == typeof(PassengerPlane)).Select(p => p))
-            {
-                passengerPlanes.Add((PassengerPlane)p);
-            }
-
+            passengerPlanes.AddRange(planes.Where(p => p.GetType() == typeof(PassengerPlane)).Select(p => (PassengerPlane)p));
             return passengerPlanes;
         }
 
         public List<MilitaryPlane> GetMilitaryPlanes()
         {
             List<MilitaryPlane> militaryPlanes = new List<MilitaryPlane>();
-            foreach (Plane p in planes.Where(p => p.GetType() == typeof(MilitaryPlane)).Select(p => p))
-            {
-                militaryPlanes.Add((MilitaryPlane)p);
-            }
-
+            militaryPlanes.AddRange(planes.Where(p => p.GetType() == typeof(MilitaryPlane)).Select(p => (MilitaryPlane)p));
             return militaryPlanes;
         }
 
@@ -43,7 +35,7 @@
 
         public List<MilitaryPlane> GetTransportMilitaryPlanes()
         {
-            return GetMilitaryPlanes().FindAll(p => p.GetMilitaryPlaneType().Equals(MilitaryType.TRANSPORT));
+            return GetMilitaryPlanes().FindAll(p => p.GetMilitaryPlaneType().Equals(MilitaryType.TRANSPORT)).ToList();
         }
 
         public Airport SortByMaxDistance()
@@ -64,6 +56,20 @@
         public IEnumerable<Plane> GetPlanes()
         {
             return planes;
+        }
+
+        public virtual bool IsEqualsToBase(object obj)
+        {
+            List<Plane> airport = obj as List<Plane>;
+            bool equality = true;
+            if (planes.Count == airport.Count)
+            {
+                for (int i = 0; i < planes.Count; i++)
+                {
+                    equality &= planes[i].GetHashCode() == airport[i].GetHashCode();
+                }
+            }
+            return equality;
         }
 
         public override string ToString()
