@@ -38,6 +38,11 @@
             return GetMilitaryPlanes().FindAll(p => p.GetMilitaryPlaneType().Equals(MilitaryType.TRANSPORT)).ToList();
         }
 
+        public List<PassengerPlane> GetSecretPassengerPlanes()
+        {
+            return GetPassengersPlanes().FindAll(p => p.GetModelClass().Equals(ClassificationLevel.SECRET)).ToList();
+        }
+
         public Airport SortByMaxDistance()
         {
             return new Airport(planes.OrderBy(w => w.GetMAXFlightDistance()));

@@ -29,6 +29,15 @@ namespace AircompanyTests.Tests
         }
 
         [Test]
+        public void HasTopSecretPassengerPlane()
+        {
+            Airport airport = new Airport(planes);
+            PassengerPlane actualResultPlane = airport.GetSecretPassengerPlanes().First();
+            PassengerPlane expectedResultPlane = planeWithMaxPassengersCapacity.First() as PassengerPlane;
+            Assert.IsTrue(actualResultPlane.IsEqualsToBase(expectedResultPlane));
+        }
+
+        [Test]
         public void SortByMaxDistance()
         {
             Airport airport = new Airport(planes);
@@ -51,6 +60,24 @@ namespace AircompanyTests.Tests
             airport = airport.SortByMaxSpeed();
             Assert.IsTrue(airport.IsEqualsToBase(planesSortedByMaxSpeed));
         }
+        
+        [Test]
+        public void ToStringPlaneWithMaxPassengersCapacity()
+        {
+            string actualResultPlane = planeWithMaxPassengersCapacity.First().ToString();
+            string expectedResultPlane = planeWithMaxPassengersCapacityAsString;
+            Assert.AreEqual(actualResultPlane, expectedResultPlane);
+        }
+
+        [Test]
+        public void ToStringTransportMilitaryPlane()
+        {
+            string actualResultPlane = transportMilitaryPlane.First().ToString();
+            string expectedResultPlane = transportMilitaryPlaneAsString;
+            Assert.AreEqual(actualResultPlane, expectedResultPlane);
+        }
+
+
 
 
         private readonly List<Plane> planes = new List<Plane>(){
@@ -124,6 +151,9 @@ namespace AircompanyTests.Tests
            new MilitaryPlane("F-22",                 1550, 13000, 11000,  MilitaryType.FIGHTER)
 
    };
+        private readonly string planeWithMaxPassengersCapacityAsString = "Plane{ model='Boeing-747', maxSpeed=980, maxFlightDistance=16100, maxLoadCapacity=70500, passengersCapacity=242, modelClass=SECRET}";
+
+        private readonly string transportMilitaryPlaneAsString = "Plane{ model='C-130 Hercules', maxSpeed=650, maxFlightDistance=5000, maxLoadCapacity=110000, type=TRANSPORT}";
 
     }
 
