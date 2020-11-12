@@ -28,7 +28,7 @@
                    type == plane.type;
         }
 
-        public override bool IsEqualsToBase(object obj)
+        public override bool IsEqualByHash(object obj)
         {
             var plane = obj as MilitaryPlane;
             return plane.GetHashCode() == GetHashCode();

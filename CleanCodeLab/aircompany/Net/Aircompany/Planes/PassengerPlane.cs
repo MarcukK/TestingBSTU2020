@@ -36,7 +36,7 @@
                    modelClass == plane.modelClass;
         }
 
-        public override bool IsEqualsToBase(object obj)
+        public override bool IsEqualByHash(object obj)
         {
             var plane = obj as Plane;
             return plane.GetHashCode() == GetHashCode();

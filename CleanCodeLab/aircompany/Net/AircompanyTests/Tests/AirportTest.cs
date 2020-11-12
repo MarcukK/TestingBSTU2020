@@ -11,12 +11,36 @@ namespace AircompanyTests.Tests
     public class AirportTest
     {
         [Test]
+        public void IsEqualsPlane()
+        {
+            Plane actualResultPlane = planeSimilarToPlaneWithMaxPassengersCapacity.First();
+            Plane expectedResultPlane = planeWithMaxPassengersCapacity.First();
+            Assert.IsTrue(actualResultPlane.Equals(expectedResultPlane));
+        }
+
+        [Test]
+        public void IsEqualsPassengerPlane()
+        {
+            PassengerPlane actualResultPlane = planeSimilarToPlaneWithMaxPassengersCapacity.First() as PassengerPlane;
+            PassengerPlane expectedResultPlane = planeWithMaxPassengersCapacity.First() as PassengerPlane;
+            Assert.IsTrue(actualResultPlane.Equals(expectedResultPlane));
+        }
+
+        [Test]
+        public void IsEqualsMilitaryPlane()
+        {
+            MilitaryPlane actualResultPlane = planeSimilarToTransportMilitaryPlane.First() as MilitaryPlane;
+            MilitaryPlane expectedResultPlane = transportMilitaryPlane.First() as MilitaryPlane;
+            Assert.IsTrue(actualResultPlane.Equals(expectedResultPlane));
+        }
+
+        [Test]
         public void HasCorrectPassengerPlaneWithMaxPassengersCapacity()
         {
             Airport airport = new Airport(planes);
             PassengerPlane actualResultPlane = airport.GetPassengerPlaneWithMaxPassengersCapacity();
             PassengerPlane expectedResultPlane = (PassengerPlane)planeWithMaxPassengersCapacity.First();
-            Assert.IsTrue(actualResultPlane.IsEqualsToBase(expectedResultPlane));
+            Assert.IsTrue(actualResultPlane.IsEqualByHash(expectedResultPlane));
         }
 
         [Test]
@@ -25,7 +49,7 @@ namespace AircompanyTests.Tests
             Airport airport = new Airport(planes);
             MilitaryPlane actualResultPlane = airport.GetTransportMilitaryPlanes().First();
             MilitaryPlane expectedResultPlane = transportMilitaryPlane.First();
-            Assert.IsTrue(actualResultPlane.IsEqualsToBase(expectedResultPlane));
+            Assert.IsTrue(actualResultPlane.IsEqualByHash(expectedResultPlane));
         }
 
         [Test]
@@ -34,7 +58,7 @@ namespace AircompanyTests.Tests
             Airport airport = new Airport(planes);
             PassengerPlane actualResultPlane = airport.GetSecretPassengerPlanes().First();
             PassengerPlane expectedResultPlane = planeWithMaxPassengersCapacity.First() as PassengerPlane;
-            Assert.IsTrue(actualResultPlane.IsEqualsToBase(expectedResultPlane));
+            Assert.IsTrue(actualResultPlane.IsEqualByHash(expectedResultPlane));
         }
 
         [Test]
@@ -42,7 +66,7 @@ namespace AircompanyTests.Tests
         {
             Airport airport = new Airport(planes);
             airport = airport.SortByMaxDistance();
-            Assert.IsTrue(airport.IsEqualsToBase(planesSortedByMaxDistance));
+            Assert.IsTrue(airport.IsEqualByHash(planesSortedByMaxDistance));
         }
 
         [Test]
@@ -50,7 +74,7 @@ namespace AircompanyTests.Tests
         {
             Airport airport = new Airport(planes);
             airport = airport.SortByMaxLoadCapacity();
-            Assert.IsTrue(airport.IsEqualsToBase(planesSortedByMaxLoadCapacity));
+            Assert.IsTrue(airport.IsEqualByHash(planesSortedByMaxLoadCapacity));
         }
 
         [Test]
@@ -58,9 +82,18 @@ namespace AircompanyTests.Tests
         {
             Airport airport = new Airport(planes);
             airport = airport.SortByMaxSpeed();
-            Assert.IsTrue(airport.IsEqualsToBase(planesSortedByMaxSpeed));
+            Assert.IsTrue(airport.IsEqualByHash(planesSortedByMaxSpeed));
         }
-        
+
+        [Test]
+        public void ToStringAirportWithPlaneWithMaxPassengersCapacity()
+        {
+            Airport airport = new Airport(planeWithMaxPassengersCapacity);
+            string actualResultPlane = airport.ToString();
+            string expectedResultPlane = airportWithPlaneWithMaxPassengersCapacityAsString;
+            Assert.AreEqual(actualResultPlane, expectedResultPlane);
+        }
+
         [Test]
         public void ToStringPlaneWithMaxPassengersCapacity()
         {
@@ -99,7 +132,13 @@ namespace AircompanyTests.Tests
         private readonly List<MilitaryPlane> transportMilitaryPlane = new List<MilitaryPlane>(){
            new MilitaryPlane("C-130 Hercules", 650, 5000, 110000, MilitaryType.TRANSPORT)
    };
+        private readonly List<MilitaryPlane> planeSimilarToTransportMilitaryPlane = new List<MilitaryPlane>(){
+           new MilitaryPlane("C-130 Hercules", 650, 5000, 110000, MilitaryType.TRANSPORT)
+   };
         private readonly List<Plane> planeWithMaxPassengersCapacity = new List<Plane>(){
+           new PassengerPlane("Boeing-747", 980, 16100, 70500, 242, ClassificationLevel.SECRET)
+   };
+        private readonly List<Plane> planeSimilarToPlaneWithMaxPassengersCapacity = new List<Plane>(){
            new PassengerPlane("Boeing-747", 980, 16100, 70500, 242, ClassificationLevel.SECRET)
    };
         private readonly List<Plane> planesSortedByMaxDistance = new List<Plane>(){
@@ -155,6 +194,7 @@ namespace AircompanyTests.Tests
 
         private readonly string transportMilitaryPlaneAsString = "Plane{ model='C-130 Hercules', maxSpeed=650, maxFlightDistance=5000, maxLoadCapacity=110000, type=TRANSPORT}";
 
+        private readonly string airportWithPlaneWithMaxPassengersCapacityAsString = "Airport{ planes=Boeing-747}";
     }
 
 }

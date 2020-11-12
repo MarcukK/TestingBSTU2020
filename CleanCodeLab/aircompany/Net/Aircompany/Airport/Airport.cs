@@ -58,12 +58,7 @@
             return new Airport(planes.OrderBy(w => w.GetMAXLoadCapacity()));
         }
 
-        public IEnumerable<Plane> GetPlanes()
-        {
-            return planes;
-        }
-
-        public virtual bool IsEqualsToBase(object obj)
+        public virtual bool IsEqualByHash(object obj)
         {
             List<Plane> airport = obj as List<Plane>;
             bool equality = true;

@@ -53,7 +53,7 @@
                    maxLoadCapacity == plane.maxLoadCapacity;
         }
 
-        public virtual bool IsEqualsToBase(object obj)
+        public virtual bool IsEqualByHash(object obj)
         {
             var plane = obj as Plane;
             return plane.GetHashCode() == GetHashCode();
