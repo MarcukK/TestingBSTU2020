@@ -111,6 +111,91 @@ namespace AircompanyTests.Tests
         }
 
 
+        //Negative Tests
+
+        [Test]
+        public void IsNotEqualsPlane()
+        {
+            Plane actualResultPlane = planeSimilarToTransportMilitaryPlane.Last();
+            Plane expectedResultPlane = planeWithMaxPassengersCapacity.First();
+            Assert.IsFalse(actualResultPlane.Equals(expectedResultPlane));
+        }
+
+        [Test]
+        public void IsNotEqualsPassengerPlane()
+        {
+            MilitaryPlane actualResultPlane = planeSimilarToTransportMilitaryPlane.First() as MilitaryPlane;
+            PassengerPlane expectedResultPlane = planeWithMaxPassengersCapacity.First() as PassengerPlane;
+            Assert.IsFalse(actualResultPlane.Equals(expectedResultPlane));
+        }
+
+        [Test]
+        public void IsNotEqualsMilitaryPlane()
+        {
+            PassengerPlane actualResultPlane = planeWithMaxPassengersCapacity.First() as PassengerPlane;
+            MilitaryPlane expectedResultPlane = transportMilitaryPlane.First() as MilitaryPlane;            
+            Assert.IsFalse(actualResultPlane.Equals(expectedResultPlane));
+        }
+
+        [Test]
+        public void HasNoMilitaryTransportPlane()
+        {
+            Airport airport = new Airport(planes);
+            PassengerPlane actualResultPlane = airport.GetSecretPassengerPlanes().First();
+            MilitaryPlane expectedResultPlane = transportMilitaryPlane.First();
+            Assert.IsFalse(actualResultPlane.IsEqualByHash(expectedResultPlane));
+        }
+
+        [Test]
+        public void SortNotByMaxDistance()
+        {
+            Airport airport = new Airport(planes);
+            airport = airport.SortByMaxLoadCapacity();
+            Assert.IsFalse(airport.IsEqualByHash(planesSortedByMaxDistance));
+        }
+
+        [Test]
+        public void SortNotByMaxLoadCapacity()
+        {
+            Airport airport = new Airport(planes);
+            airport = airport.SortByMaxSpeed();
+            Assert.IsFalse(airport.IsEqualByHash(planesSortedByMaxLoadCapacity));
+        }
+
+        [Test]
+        public void SortNotByMaxSpeed()
+        {
+            Airport airport = new Airport(planes);
+            airport = airport.SortByMaxLoadCapacity();
+            Assert.IsFalse(airport.IsEqualByHash(planesSortedByMaxSpeed));
+        }
+
+        [Test]
+        public void ToStringNotAirportWithPlaneWithMaxPassengersCapacity()
+        {
+            Airport airport = new Airport(planes);
+            string actualResultPlane = airport.ToString();
+            string expectedResultPlane = airportWithPlaneWithMaxPassengersCapacityAsString;
+            Assert.AreNotEqual(actualResultPlane, expectedResultPlane);
+        }
+
+        [Test]
+        public void ToStringNotPlaneWithMaxPassengersCapacity()
+        {
+            string actualResultPlane = transportMilitaryPlane.First().ToString();
+            string expectedResultPlane = planeWithMaxPassengersCapacityAsString;
+            Assert.AreNotEqual(actualResultPlane, expectedResultPlane);
+        }
+
+        [Test]
+        public void ToStringNotTransportMilitaryPlane()
+        {
+            string actualResultPlane = planeWithMaxPassengersCapacity.First().ToString();
+            string expectedResultPlane = transportMilitaryPlaneAsString;
+            Assert.AreNotEqual(actualResultPlane, expectedResultPlane);
+        }
+
+
 
 
         private readonly List<Plane> planes = new List<Plane>(){
