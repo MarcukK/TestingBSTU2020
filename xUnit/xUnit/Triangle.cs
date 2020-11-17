@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NUnit.Framework;
 
 namespace xUnit
 {
     public static class Triangle
     {
+        [TestCase(-5, 10, 10, ExpectedResult = false)]
+        [TestCase(5, -10, 10, ExpectedResult = false)]
+        [TestCase(5, 10, -10, ExpectedResult = false)]
         public static bool CreateTriangle(double x, double y, double z)
         {
             return ((((x + y) > z) && ((x + z) > y) && ((z + y) > x)));

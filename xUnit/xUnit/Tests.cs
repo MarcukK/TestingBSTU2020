@@ -5,13 +5,11 @@ namespace xUnit
     [TestFixture]
     public class CreateTriangleTests
     {
-        [TestCase]
-        public void NegativeInput()
+        [TestCase(-5, 10, -10)]
+        [TestCase(5, -10, -10)]
+        [TestCase(-5, -10, 10)]
+        public void NegativeInput(double x, double y, double z)
         {
-            Assert.IsFalse(Triangle.CreateTriangle(-5, 10, 10), "Error in NotNegativeInput CreateTriangle X");
-            Assert.IsFalse(Triangle.CreateTriangle(5, -10, 10), "Error in NotNegativeInput CreateTriangle Y");
-            Assert.IsFalse(Triangle.CreateTriangle(5, 10, -10), "Error in NotNegativeInput CreateTriangle Z");
-
             Assert.IsFalse(Triangle.IsTwoSidesEqual(-10, 5, -10), "Error in NotNegativeInput IsTwoSidesEqual X");
             Assert.IsFalse(Triangle.IsTwoSidesEqual(5, -10, -10), "Error in NotNegativeInput IsTwoSidesEqual Y");
             Assert.IsFalse(Triangle.IsTwoSidesEqual(-10, -10, 5), "Error in NotNegativeInput IsTwoSidesEqual Z");
