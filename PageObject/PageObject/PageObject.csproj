@@ -55,13 +55,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataLayer\TestingProducts.cs" />
     <Compile Include="PageObjects\BasketPage.cs" />
-    <Compile Include="PageObjects\BasketPages\BasketForCheckingTheSizeChangeOfTheSelectedClothing.cs" />
-    <Compile Include="PageObjects\BasketPages\BasketForCheckingTheNameChangeOfTheSelectedClothing.cs" />
-    <Compile Include="PageObjects\Page.cs" />
+    <Compile Include="PageObjects\BasePage.cs" />
+    <Compile Include="DataLayer\Product.cs" />
     <Compile Include="PageObjects\ProductPage.cs" />
-    <Compile Include="PageObjects\ProductPages\ProductPageForCheckingTheSizeChangeOfTheSelectedClothing.cs" />
-    <Compile Include="PageObjects\ProductPages\ProductPageForCheckingTheNameChangeOfTheSelectedClothing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\Tests.cs" />
   </ItemGroup>

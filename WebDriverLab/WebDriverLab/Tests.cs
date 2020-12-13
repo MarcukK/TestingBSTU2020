@@ -8,7 +8,10 @@ namespace WebDriverLab
 {
     class Tests
     {
-        string productNameForCheckingNameChangeOfClothingTest = "Medium Vintage Check Bonded Cotton Bum Bag";
+        string productNameChangeOfClothingTest = "Medium Vintage Check Bonded Cotton Bum Bag";
+        string productColorChangeOfClothingTest = "archive beige";
+        string productItemChangeOfClothingTest = "80104301";
+        
 
         IWebDriver driver;
         string websiteUrl = "https://uk.burberry.com/logo-detail-econyl-sonny-bum-bag-p80256681?searchQuery=Logo%20Detail%20ECONYL%C2%AE%20Sonny%20Bum%20Bag";
@@ -64,23 +67,31 @@ namespace WebDriverLab
             cookiesPopup.Click();
 
 
-            IWebElement colorChoice = fluentWait.Until(x => x.FindElement(By.CssSelector("div.swatch:nth-child(1)>a:nth-child(1)>span:nth-child(1)")));
+            IWebElement colorChoice = fluentWait.Until(x => x.FindElement(By.XPath("//a[@aria-label='Archive beige']")));
             colorChoice.Click();
 
-            IWebElement productName = fluentWait.Until(x => x.FindElement(By.CssSelector("h1>span:nth-child(1)")));
-            while(productName.Text != productNameForCheckingNameChangeOfClothingTest) ;
+            IWebElement productName = fluentWait.Until(x => x.FindElement(By.XPath("//h1[@class='product-info-panel__title']/span")));
+            while(productName.Text != productNameChangeOfClothingTest) ;
 
             IWebElement addButton = fluentWait.Until(x => x.FindElement(By.ClassName("add-to-bag__button-content")));
             addButton.Click();
 
             IWebElement basketCounter = WaitForTheElement(fluentWait, By.ClassName("header__button--with-one-digit-counter"));
-            IWebElement basket = fluentWait.Until(x => x.FindElement(By.CssSelector("div.header__icon-container>ul>li:nth-child(3)")));
+            while (!basketCounter.Displayed) ;
+            IWebElement basket = fluentWait.Until(x => x.FindElement(By.XPath("//a[@title='Bag']")));
             while (!basket.Displayed);
             basket.Click();
 
-            IWebElement productInBasketName = fluentWait.Until(x => x.FindElement(By.CssSelector("td.item-description.item-description-top.item-description-oneline.cell>h2")));
+            IWebElement productInBasketName = fluentWait.Until(x => x.FindElement(By.XPath("//h2[text()='Medium Vintage Check Bonded Cotton Bum Bag']")));
+            IWebElement productInBasketColor = fluentWait.Until(x => x.FindElement(By.XPath("//dd[text()='\n                                                        Archive beige']")));
+            IWebElement productInBasketItem = fluentWait.Until(x => x.FindElement(By.XPath("//dd[text()='\n                                                        80104301']")));
 
-            Assert.AreEqual(productInBasketName.Text, productNameForCheckingNameChangeOfClothingTest);
+            //IWebElement productInBasketColor = fluentWait.Until(x => x.FindElement(By.XPath("//dd[@class='color-value']")));
+            //IWebElement productInBasketItem = fluentWait.Until(x => x.FindElement(By.XPath("//dd[@class='id-value']")));
+
+            Assert.AreEqual(productInBasketName.Text.Trim(), productNameChangeOfClothingTest);
+            Assert.AreEqual(productInBasketColor.Text.Trim(), productColorChangeOfClothingTest);
+            Assert.AreEqual(productInBasketItem.Text.Trim(), productItemChangeOfClothingTest);
         }
 
         [TearDown]

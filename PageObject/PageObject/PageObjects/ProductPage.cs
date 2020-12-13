@@ -1,31 +1,25 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PageObject.PageObjects
 {
-    public class ProductPage : Page
+    public class ProductPage : BasePage
     {
-
-        [FindsBy(How = How.CssSelector, Using = "h1>span:nth-child(1)")]
-        protected readonly IWebElement productName;
 
         [FindsBy(How = How.ClassName, Using = "add-to-bag__button-content")]
         protected readonly IWebElement addButton;
-
-        [FindsBy(How = How.CssSelector, Using = ".icon.icon--glyph-bag.icon--glyph-box.icon--size-m.header__icon")]
-        protected readonly IWebElement basket;
-
-        [FindsBy(How = How.XPath, Using = "//li[3]/a/span[2]")]
+        
+        [FindsBy(How = How.ClassName, Using = "header__button--with-one-digit-counter")]
         protected readonly IWebElement basketCounter;
+
+        [FindsBy(How = How.XPath, Using = "//a[@title='Bag']")]
+        protected readonly IWebElement basket;
 
         public ProductPage(IWebDriver driver) : base(driver) { }
 
-        public new ProductPage OpenPage()
+        public new ProductPage OpenPage(string pageURL)
         {
             driver.Navigate().GoToUrl(pageURL);
             return this;
@@ -38,18 +32,40 @@ namespace PageObject.PageObjects
             return this;
         }
 
+        public ProductPage ChooseColor(string color, string newName)
+        {
+            IWebElement colorChoise = fluentWait.Until(x => x.FindElement(By.XPath("//a[@aria-label='" + color + "']")));
+            colorChoise.Click();
+            IWebElement productName = fluentWait.Until(x => x.FindElement(By.XPath("//h1[@class='product-info-panel__title']/span")));
+            while (productName.Text != newName) ;
+            return this;
+        }
+
+        public ProductPage ChooseSize(string size)
+        {
+            IWebElement sizeChoise = fluentWait.Until(x => x.FindElement(By.XPath("//label[@value='" + size + "']")));
+            sizeChoise.Click();
+            return this;
+        }
+
         public ProductPage AddProductToBasket()
         {
+            while (!basket.Displayed) ;
             addButton.Click();
             return this;
         }
 
         public BasketPage NavigateToBasket()
         {
-            while (!basket.Displayed);
+            IWebElement anyCounter = WaitForTheElement(fluentWait, By.XPath("//span[@class='header__button-text header__button-text--show']"));
+            List<IWebElement> counters = fluentWait.Until(x => x.FindElements(By.XPath("//span[@class='header__button-text header__button-text--show']"))).ToList();
+            IWebElement basketCounter = counters.Last();
+            while (!basketCounter.Displayed) ;
+            while (!basket.Displayed) ;
             basket.Click();
             return new BasketPage(driver);
         }
+
 
     }
 }

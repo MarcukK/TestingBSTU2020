@@ -6,29 +6,27 @@ using System.Collections.ObjectModel;
 
 namespace PageObject.PageObjects
 {
-    public class Page
+    public class BasePage
     {
-        protected string pageURL = "";
-
         protected DefaultWait<IWebDriver> fluentWait;
         protected IWebDriver driver;
-        protected int timeoutInSeconds = 30;
-        protected string cookiesId = "onetrust-accept-btn-handler";
+        protected const int timeoutInSeconds = 30;
+        protected const string cookiesId = "onetrust-accept-btn-handler";
 
-        public Page(IWebDriver driver)
+        public BasePage(IWebDriver driver)
         {
             fluentWait = GetFluentWait(driver);
             PageFactory.InitElements(driver, this);
             this.driver = driver;
         }
 
-        public Page OpenPage()
+        public BasePage OpenPage(string pageURL)
         {
             driver.Navigate().GoToUrl(pageURL);
             return this;
         }
 
-        public Page AcceptCookies()
+        public BasePage AcceptCookies()
         {
             IWebElement cookiesPopup = WaitForTheElement(fluentWait, By.Id(cookiesId));
             cookiesPopup.Click();
