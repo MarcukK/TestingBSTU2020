@@ -52,7 +52,7 @@ namespace Framework.PageObjects
             Logger.Log.Info("Add products to Favourites");
             IWebElement addToFavouritesNote = fluentWait.Until(x => x.FindElement(By.XPath("//div[@class='add-to-favourites-note']")));
             WaitForTheElement(fluentWait, By.XPath("//button[@title='Add to Favourites' and @aria-pressed='false']"));
-            for (int i = 0; i < numberOfProducts;)
+            for (int i = 0, n = 100; i < numberOfProducts;)
             {
                 try
                 {
@@ -62,12 +62,12 @@ namespace Framework.PageObjects
                     int j = 0;
                     List<IWebElement> buttonsToAddToFavourites2 = fluentWait.Until(x => x.FindElements(By.XPath("//button[@title='Add to Favourites' and @aria-pressed='false']"))).ToList();
                     while ((buttonsToAddToFavourites2.Count == buttonsToAddToFavourites.Count) 
-                            && (j < 100))
+                            && (j < n))
                     {
                         buttonsToAddToFavourites2 = fluentWait.Until(x => x.FindElements(By.XPath("//button[@title='Add to Favourites' and @aria-pressed='false']"))).ToList();
                         j++;
                     }
-                    if(j < 100)
+                    if(j < n + 1)
                         i++;
                 }
                 catch (Exception exc) { }
