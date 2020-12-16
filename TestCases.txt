@@ -1,6 +1,6 @@
 https://uk.burberry.com
 
-1.checking the name change of the selected clothing
++1.checking the name change of the selected clothing
 ШАГИ
 Перейти по ссылке https://uk.burberry.com/logo-detail-econyl-sonny-bum-bag-p80256681?searchQuery=Logo%20Detail%20ECONYL%C2%AE%20Sonny%20Bum%20Bag
 Нажать на иконку цвета Archive beige. Название изменится на Medium Vintage Check Bonded Cotton Bum Bag
@@ -10,7 +10,7 @@ https://uk.burberry.com
 В корзине появится выбранный ранее продукт с названием Medium Vintage Check Bonded Cotton Bum Bag
 										   и цветом    Archive beige 
 
-2.checking the size of the selected clothing
++2.checking the size of the selected clothing
 ШАГИ
 Перейти по ссылке https://uk.burberry.com/logo-applique-silk-satin-oversized-shirt-p45669041?searchQuery=Logo%20Applique%20Silk%20Satin%20Oversized%20Shirt
 Нажать на любой доступный размер в разделе SIZE(UK), например 04
@@ -19,14 +19,14 @@ https://uk.burberry.com
 ОЖИДАЕМЫЙ РЕЗУЛЬТАТ
 В корзине появится выбранный ранее продукт с выбранным ранее размером
 
-3.checking the selection of clothes without size
++3.checking the selection of clothes without size
 ШАГИ
 Перейти по ссылке https://uk.burberry.com/logo-applique-silk-satin-oversized-shirt-p45669041?searchQuery=Logo%20Applique%20Silk%20Satin%20Oversized%20Shirt
 Нажать на кнопку ADD
 ОЖИДАЕМЫЙ РЕЗУЛЬТАТ
 Под кнопкой BOOK IN-STORE APPOINTMENT появится error-label с надписью "Please select a size"
 
-4. check adding to favorites
++4. check adding to favorites
 ШАГИ
 Перейти по ссылке https://uk.burberry.com/womens-scarves/
 Нажать на иконку Add to favorites справа от цены у первого продукта
@@ -35,7 +35,7 @@ https://uk.burberry.com
 ОЖИДАЕМЫЙ РЕЗУЛЬТАТ
 В выпадающем меню отобразится два товара, а внизу их изображений будет надпись View 2 favourites
 
-5. check adding personalisation
++5. check adding personalisation
 ШАГИ
 Перейти по ссылке https://uk.burberry.com/the-classic-check-cashmere-scarf-p80181731
 Нажать на PERSONALISATION
@@ -45,7 +45,7 @@ https://uk.burberry.com
 ОЖИДАЕМЫЙ РЕЗУЛЬТАТ
 Под ценой товара должна появиться надпись Includes personalisation
 
-6. checking the price of two identical goods
++6. checking the price of two identical goods
 ШАГИ
 Перейти по ссылке https://uk.burberry.com/logo-detail-econyl-sonny-bum-bag-p80256681?searchQuery=Logo%20Detail%20ECONYL%C2%AE%20Sonny%20Bum%20Bag
 Нажать на кнопку ADD
@@ -54,7 +54,7 @@ https://uk.burberry.com
 ОЖИДАЕМЫЙ РЕЗУЛЬТАТ
 В корзине появится выбранный ранее продукт с удвоенной ценой
 
-7. checking the price of two different items
++7. checking the price of two different items
 ШАГИ
 Перейти по ссылке https://uk.burberry.com/logo-detail-econyl-sonny-bum-bag-p80256681?searchQuery=Logo%20Detail%20ECONYL%C2%AE%20Sonny%20Bum%20Bag
 Нажать на кнопку ADD
@@ -63,11 +63,12 @@ https://uk.burberry.com
 Нажать на кнопку корзины вверху-справа
 ОЖИДАЕМЫЙ РЕЗУЛЬТАТ
 В корзине появятся выбранные ранее продукты, 
-	а Estimated Total будет равна сумме sub-total каждого продукта цен.
+	а Estimated Total будет равна сумме sub-total цен каждого продукта.
 
-8.checking the choice of clothing in a standard color
++8.checking the choice of clothing in a standard color
 ШАГИ
-Перейти по ссылке https://uk.burberry.com/logo-detail-econyl-sonny-bum-bag-p80256681?searchQuery=Logo%20Detail%20ECONYL%C2%AE%20Sonny%20Bum%20BagПродукт должен иметь стандартный цвет, например чёрный
+Перейти по ссылке https://uk.burberry.com/logo-detail-econyl-sonny-bum-bag-p80256681?searchQuery=Logo%20Detail%20ECONYL%C2%AE%20Sonny%20Bum%20Bag
+	Продукт должен иметь стандартный цвет, например чёрный
 Нажать на кнопку ADD
 Нажать на кнопку корзины вверху-справа
 ОЖИДАЕМЫЙ РЕЗУЛЬТАТ
@@ -82,7 +83,7 @@ https://uk.burberry.com
 ОЖИДАЕМЫЙ РЕЗУЛЬТАТ
 Цены должны совпадать
 
-10. сhecking the bigger price for bigger size of Parfum
++10. сhecking the bigger price for bigger size of Parfum
 ШАГИ
 Перейти по ссылке https://uk.burberry.com/her-intense-eau-de-parfum-100ml-p40809141
 Зафиксировать цену товара
@@ -90,6 +91,27 @@ https://uk.burberry.com
 Зафиксировать цену товара
 ОЖИДАЕМЫЙ РЕЗУЛЬТАТ
 Первая цена должна быть больше второй
+
++11. сhecking the count of shops in UK
+Перейти по ссылке https://uk.burberry.com/logo-detail-econyl-sonny-bum-bag-p80256681
+Нажать на кнопку FIND IN STORE
+Нажать на чек-бокс Include stores with no current availability
+ОЖИДАЕМЫЙ РЕЗУЛЬТАТ
+Под кнопкой BUY ONLINE должна появиться надпись 21 STORES IN UNITED KINGDOM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
