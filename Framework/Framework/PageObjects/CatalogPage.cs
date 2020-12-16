@@ -67,7 +67,7 @@ namespace Framework.PageObjects
                         buttonsToAddToFavourites2 = fluentWait.Until(x => x.FindElements(By.XPath("//button[@title='Add to Favourites' and @aria-pressed='false']"))).ToList();
                         j++;
                     }
-                    if(j < n + 1)
+                    if(j < n)
                         i++;
                 }
                 catch (Exception exc) { }
