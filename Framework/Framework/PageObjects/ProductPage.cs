@@ -9,11 +9,12 @@ namespace PageObject.PageObjects
 {
     public class ProductPage : BasePage
     {
-        public static readonly string noSizeErrorMessage = "Please select a size";
-
         [FindsBy(How = How.ClassName, Using = "add-to-bag__button-content")]
         protected readonly IWebElement addButton;
 
+        [FindsBy(How = How.XPath, Using = "//div[@class='stores-list__title']")]
+        protected readonly IWebElement chooseTheSizeMessage;
+        
         [FindsBy(How = How.XPath, Using = "//button[@class='button find-in-store button-secondary']")]
         protected readonly IWebElement findInStoreButton;
 

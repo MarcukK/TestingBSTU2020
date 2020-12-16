@@ -4,15 +4,10 @@ using Framework.PageObjects;
 using Framework.Service;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Support.Extensions;
-using OpenQA.Selenium.Support.UI;
 using PageObject.DataLayer;
 using PageObject.PageObjects;
 using System;
 using System.Collections.Generic;
-using System.IO;
 
 namespace PageObject
 {
@@ -127,22 +122,23 @@ namespace PageObject
         {
             Logger.Log.Info("CheckTheSelectionOfClothesWithoutSize");
             Product productForTest = ProductCreator.withManySizes_04();
+            string expectedMessage = "Please select a size";
             ProductPage productPageCheckTheSelectionOfClothesWithoutSize = new ProductPage(driver);
+            string actualMessage = "";
             try
             {
                 productPageCheckTheSelectionOfClothesWithoutSize.OpenPage(productForTest.URL)
                                                                 .AcceptCookies()
                                                                 .AddProductToBasket();
-                
+
+                actualMessage = productPageCheckTheSelectionOfClothesWithoutSize.GetNoSizeErrorLabel();
             }
             catch (Exception ex)
             {
                 Logger.ErrorHandler(driver, ex);
             }
 
-            Assert.AreEqual(ProductPage.noSizeErrorMessage,
-                            productPageCheckTheSelectionOfClothesWithoutSize.GetNoSizeErrorLabel(), 
-                            "invalid error message") ;
+            Assert.AreEqual(expectedMessage, actualMessage, "invalid error message") ;
         }
 
         [Test, Description("CheckAddingToFavorites Test Failed")]
